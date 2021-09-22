@@ -33,6 +33,10 @@ from optimizers import init_optim
 
 parser = argparse.ArgumentParser(description='Train image model with cross entropy loss and hard triplet loss')
 # Datasets
+parser.add_argument('--root', type=str, default='', 
+                    help="the path to dataset")
+parser.add_argument('--fore_dir', type=str, default='', 
+                    help="the path to extracted foremaps")
 parser.add_argument('-d', '--dataset', type=str, default='market1501',
                     choices=data_manager.get_names())
 parser.add_argument('-j', '--workers', default=4, type=int,
@@ -114,7 +118,7 @@ def main():
         print("Currently using CPU (GPU is highly recommended)")
 
     print("Initializing dataset {}".format(args.dataset))
-    dataset = data_manager.init_imgreid_dataset(name=args.dataset)
+    dataset = data_manager.init_imgreid_dataset(name=args.dataset, dataset_dir=args.root, fore_dir=args.fore_dir)
 
     transform_train = ST.Compose([
         ST.Scale((args.height, args.width), interpolation=3),
