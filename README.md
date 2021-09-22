@@ -19,5 +19,3 @@ If you use our code in your research, please use the following BibTeX entry.
   year={2020},
   publisher={IEEE}
 }
-
-```
