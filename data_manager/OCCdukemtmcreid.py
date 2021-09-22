@@ -33,9 +33,9 @@ class OCCDukeMTMCreID(BaseImgDataset):
     # images:15618 (train) + 2210 (query) + 17661 (gallery)
     # cameras: 8
     """
-    def __init__(self, verbose=True):
+    def __init__(self, dataset_dir, fore_dir, verbose=True):
         super(OCCDukeMTMCreID, self).__init__()
-        self.dataset_dir = '/mnt/local0/houruibing/data/re_id_data/image/Occluded_Duke/'
+        self.dataset_dir = dataset_dir
         self.key_points_dir = './key_points/'
 
         self.train_dir = osp.join(self.dataset_dir, 'bounding_box_train')
@@ -43,7 +43,7 @@ class OCCDukeMTMCreID(BaseImgDataset):
         self.gallery_dir = osp.join(self.dataset_dir, 'bounding_box_test')
 
         self.key_points_train = osp.join(self.key_points_dir, 'duke_train_key_points.json')
-        self.fore_maps_train = '/mnt/local0/houruibing/data/re_id_data/image/DukeMTMC-reID/seg_part4/Duke_train_seg_part4'
+        self.fore_maps_train = fore_dir
 
         self._check_before_run()
 
