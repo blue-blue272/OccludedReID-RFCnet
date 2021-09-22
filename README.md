@@ -12,12 +12,12 @@
 ### Citation
 If you use our code in your research, please use the following BibTeX entry.
 
-   @article{hou2021RFCnet,
-      title={Feature Completion for Occluded Person Re-Identification},
-      author={Ruibing Hou and Bingpeng Ma and Hong Chang and Xinqian Gu and Shiguang Shan and Xilin Chen},
-      journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-      year={2021},
-      publisher={IEEE}
-      }
+@article{hou2021RFCnet,
+  title={Feature Completion for Occluded Person Re-Identification},
+  author={Ruibing Hou and Bingpeng Ma and Hong Chang and Xinqian Gu and Shiguang Shan and Xilin Chen},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2020},
+  publisher={IEEE}
+}
 
 ```
