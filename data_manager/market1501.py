@@ -31,9 +31,9 @@ class Market1501(BaseImgDataset):
     # identities: 1501 (+1 for background)
     # images: 12936 (train) + 3368 (query) + 15913 (gallery)
     """
-    def __init__(self, verbose=True):
+    def __init__(self, dataset_dir, fore_dir, verbose=True):
         super(Market1501, self).__init__()
-        self.dataset_dir = '/mnt/local0/houruibing/data/re_id_data/image/Market-1501/'
+        self.dataset_dir = dataset_dir
         self.key_points_dir = './key_points/'
 
         self.train_dir = osp.join(self.dataset_dir, 'bounding_box_train')
@@ -41,7 +41,7 @@ class Market1501(BaseImgDataset):
         self.gallery_dir = osp.join(self.dataset_dir, 'bounding_box_test')
         
         self.key_points_train = osp.join(self.key_points_dir, 'market_train_key_points.json')
-        self.fore_maps_train = osp.join(self.dataset_dir, 'seg_part4', 'Market1501_train_seg_part4')
+        self.fore_maps_train = fore_dir
 
         self._check_before_run()
 
